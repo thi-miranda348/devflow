@@ -4,45 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevFlow - Issue Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+    
     <div class="app-container">
-
+        
         <aside class="app-sidebar">
-            <div class="sidebar-header">Logo & Title</div>
-            <nav class="sidebar-nav">Navigation Links</nav>
-            <div class="sidebar-footer">Connect GitHub & Settings</div>
+            <div class="brand-header">
+                <div class="brand-logo-placeholder"></div>
+                <div class="brand-text">
+                    <h1 class="headline-md text-tertiary">DevFlow</h1>
+                    <p class="label-sm text-muted">Good First Issues</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="material-symbols-outlined">star</span>
+                            My Interests
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="material-symbols-outlined">bookmark</span>
+                            Saved Issues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="material-symbols-outlined">history</span>
+                            History
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-outline-tertiary full-width">
+                    <span class="material-symbols-outlined icon-fill">link</span>
+                    Connect GitHub
+                </button>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#" class="nav-link-small">
+                            <span class="material-symbols-outlined">settings</span> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link-small">
+                            <span class="material-symbols-outlined">menu_book</span> Documentation
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </aside>
 
         <main class="app-main">
 
             <header class="top-navbar">
-                <nav class="navbar-left">Explore, Repositories, Stats</nav>
-                <div class="navbar-search">
-                    <input type="text" class="search-input" placeholder="Quick search..." />
+                <div class="navbar-left">
+                    <nav class="horizontal-nav">
+                        <a href="#" class="nav-tab active-tab">Explore</a>
+                        <a href="#" class="nav-tab">Repositories</a>
+                        <a href="#" class="nav-tab">Stats</a>
+                    </nav>
                 </div>
-                <div class="navbar-right">Notifications & Profile</div>
+
+                <div class="navbar-right">
+                    <div class="search-bar-small">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input id="quick-search" type="text" class="input-field" placeholder="Quick search..." />
+                    </div>
+                    
+                    <div class="user-actions">
+                        <button class="action-btn notification-btn">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <span class="notification-dot"></span>
+                        </button>
+                        <button class="profile-dropdown-btn">
+                            <div class="profile-avatar-placeholder"></div>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </div>
             </header>
 
             <div class="dashboard-content">
 
                 <aside class="filter-sidebar">
-                    Quick Filters (Language, Difficulty)
+                    <div class="card glass-card">
+                        <h3 class="filter-title">Quick Filters</h3>
+                        
+                        <div class="filter-group">
+                            <label class="form-label">Language</label>
+                            <div class="chip-group">
+                                <button class="chip active-chip">Javascript</button>
+                                <button class="chip">Python</button>
+                                <button class="chip">Java</button>
+                                <button class="chip">Rust</button>
+                                <button class="chip">Go</button>
+                                <button class="chip">C++</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="form-label">Difficulty</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked /> Good First Issue
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" /> Help Wanted
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" /> Bug
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" /> Enhancement
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" /> Needs investigation
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" /> Critical / Priority: high
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="form-label">Organization</label>
+                            <select class="form-select">
+                                <option>All Organizations</option>
+                                <option>Facebook</option>
+                                <option>Microsoft</option>
+                                <option>Google</option>
+                                <option>Vercel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card pro-tip-card">
+                        <div class="pro-tip-header">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <span class="label-sm">Pro Tip</span>
+                        </div>
+                        <p class="body-md text-muted">
+                            Use specific keywords like "refactor" or "bug" to find exactly what you're looking for.
+                        </p>
+                    </div>
                 </aside>
 
                 <section class="main-canvas">
-                    <div class="hero-search-area">
-                        <h2>Find your next contribution</h2>
-                        <input type="text" class="main-search-input" />
-                        <button class="btn-primary">Fetch Issues</button>
-                    </div>
-
-                    <div class="results-grid">
+                    
+                    <article class="hero-search-area glass-card">
+                        <div class="hero-glow-blob top-right"></div>
+                        <div class="hero-glow-blob bottom-left"></div>
+                        
+                        <div class="hero-text-content">
+                            <h2 class="headline-lg">Find your next contribution</h2>
+                            <p class="body-lg text-muted">Search through thousands of repositories for accessible entry points.</p>
                         </div>
-                </section>
 
+                        <div class="hero-input-group">
+                            <div class="search-input-wrapper">
+                                <span class="material-symbols-outlined hero-search-icon">language</span>
+                                <input type="text" id="languageInput" class="hero-input" placeholder="Search language (e.g. TypeScript, React...)" />
+                            </div>
+                            <button class="btn btn-primary neon-glow" onclick="simulateSearch()">
+                                Fetch Issues
+                                <span class="material-symbols-outlined icon-rocket">rocket_launch</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <div id="resultsCanvas" class="results-grid">
+                        
+                        <article class="card glass-card issue-card border-tertiary">
+                            <div class="issue-card-header">
+                                <div class="repo-info">
+                                    <span class="material-symbols-outlined icon-small">book</span>
+                                    <span class="code-md repo-name">facebook/react</span>
+                                </div>
+                                <span class="label-sm text-muted">2 days ago</span>
+                            </div>
+                            <h4 class="headline-md issue-title">Improve devtool performance for large trees</h4>
+                            <div class="badge-group">
+                                <span class="badge badge-tertiary">good first issue</span>
+                                <span class="badge badge-primary">bug</span>
+                            </div>
+                            <div class="issue-card-footer">
+                                <button class="btn btn-outline-secondary btn-small">
+                                    View on GitHub
+                                    <span class="material-symbols-outlined icon-small">open_in_new</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="card glass-card issue-card border-primary">
+                            <div class="issue-card-header">
+                                <div class="repo-info">
+                                    <span class="material-symbols-outlined icon-small">book</span>
+                                    <span class="code-md repo-name">vercel/next.js</span>
+                                </div>
+                                <span class="label-sm text-muted">5 hours ago</span>
+                            </div>
+                            <h4 class="headline-md issue-title">Fix broken links in documentation sidebar</h4>
+                            <div class="badge-group">
+                                <span class="badge badge-tertiary">documentation</span>
+                            </div>
+                            <div class="issue-card-footer">
+                                <button class="btn btn-outline-secondary btn-small">
+                                    View on GitHub
+                                    <span class="material-symbols-outlined icon-small">open_in_new</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="card glass-card issue-card skeleton-card opacity-muted">
+                            <div class="issue-card-header">
+                                <div class="skeleton-block skeleton-repo"></div>
+                                <div class="skeleton-block skeleton-time"></div>
+                            </div>
+                            <div class="skeleton-block skeleton-title"></div>
+                            <div class="badge-group">
+                                <div class="skeleton-block skeleton-badge"></div>
+                                <div class="skeleton-block skeleton-badge-small"></div>
+                            </div>
+                            <div class="issue-card-footer">
+                                <div class="skeleton-block skeleton-button"></div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
             </div>
         </main>
     </div>
+
+    <script src="./script.js">
+        
+    </script>
 </body>
 </html>
