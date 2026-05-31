@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevFlow - Issue Finder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
-    
+
     <div class="app-container">
-        
+
         <aside class="app-sidebar">
             <div class="brand-header">
                 <div class="brand-logo-placeholder"></div>
@@ -74,6 +77,13 @@
 
             <header class="top-navbar">
                 <div class="navbar-left">
+                    <button id="mobile-menu-btn" class="action-btn mobile-only">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+
+                    <h2 class="headline-md mobile-brand text-tertiary">DevFlow</h2>
+                    <h2 class="headline-md desktop-only">Issue Finder</h2>
+
                     <nav class="horizontal-nav">
                         <a href="#" class="nav-tab active-tab">Explore</a>
                         <a href="#" class="nav-tab">Repositories</a>
@@ -86,7 +96,7 @@
                         <span class="material-symbols-outlined search-icon">search</span>
                         <input id="quick-search" type="text" class="input-field" placeholder="Quick search..." />
                     </div>
-                    
+
                     <div class="user-actions">
                         <button class="action-btn notification-btn">
                             <span class="material-symbols-outlined">notifications</span>
@@ -105,7 +115,7 @@
                 <aside class="filter-sidebar">
                     <div class="card glass-card">
                         <h3 class="filter-title">Quick Filters</h3>
-                        
+
                         <div class="filter-group">
                             <label class="form-label">Language</label>
                             <div class="chip-group">
@@ -174,20 +184,22 @@
                 </aside>
 
                 <section class="main-canvas">
-                    
+
                     <article class="hero-search-area glass-card">
                         <div class="hero-glow-blob top-right"></div>
                         <div class="hero-glow-blob bottom-left"></div>
-                        
+
                         <div class="hero-text-content">
                             <h2 class="headline-lg">Find your next contribution</h2>
-                            <p class="body-lg text-muted">Search through thousands of repositories for accessible entry points.</p>
+                            <p class="body-lg text-muted">Search through thousands of repositories for accessible entry
+                                points.</p>
                         </div>
 
                         <div class="hero-input-group">
                             <div class="search-input-wrapper">
                                 <span class="material-symbols-outlined hero-search-icon">language</span>
-                                <input type="text" id="languageInput" class="hero-input" placeholder="Search language (e.g. TypeScript, React...)" />
+                                <input type="text" id="languageInput" class="hero-input"
+                                    placeholder="Search language (e.g. TypeScript, React...)" />
                             </div>
                             <button class="btn btn-primary neon-glow" onclick="simulateSearch()">
                                 Fetch Issues
@@ -197,7 +209,7 @@
                     </article>
 
                     <div id="resultsCanvas" class="results-grid">
-                        
+
                         <article class="card glass-card issue-card border-tertiary">
                             <div class="issue-card-header">
                                 <div class="repo-info">
@@ -261,7 +273,8 @@
     </div>
 
     <script src="./script.js">
-        
+
     </script>
 </body>
+
 </html>

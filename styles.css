@@ -195,9 +195,10 @@ select {
 
 .nav-link-small {
     display: flex;
-    align-items: center; 
-    gap: 0.8rem;           
+    align-items: center;
+    gap: 0.8rem;
 }
+
 /* Main Area */
 .app-main {
     flex-grow: 1;
@@ -716,4 +717,109 @@ select {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--outline);
+}
+
+/* Display Utilities for Menu */
+.mobile-only {
+    display: none;
+}
+
+.mobile-brand {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================= */
+
+/* Tablet Breakpoint (remains the same) */
+@media (max-width: 992px) {
+    html {
+        font-size: 56.25%;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .filter-sidebar {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .main-canvas {
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Breakpoint (Updated for Hamburger Menu) */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
+    .mobile-brand {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .horizontal-nav {
+        display: none;
+    }
+
+    .top-navbar {
+        padding: 0 var(--spacing-md);
+    }
+
+    .navbar-left {
+        gap: var(--spacing-md);
+    }
+
+    .app-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .app-sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .input-field {
+        width: 18.0rem;
+    }
+
+    .hero-input-group {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .hero-search-area {
+        padding: var(--spacing-lg);
+    }
 }

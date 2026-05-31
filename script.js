@@ -222,3 +222,27 @@ difficultyCheckboxes.forEach(checkbox => {
 // DEFAULT STATE
 // Automatically fetch data immediately after the webpage finishes loading.
 document.addEventListener('DOMContentLoaded', fetchGitHubIssues);
+
+/* MOBILE MENU LOGIC */
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const appSidebar = document.querySelector('.app-sidebar');
+
+if (mobileMenuBtn && appSidebar) {
+    // Toggle sidebar when clicking the hamburger icon
+    mobileMenuBtn.addEventListener('click', (event) => {
+        // Prevent click from immediately bubbling up to the document
+        event.stopPropagation(); 
+        appSidebar.classList.toggle('sidebar-open');
+    });
+
+    // Close the sidebar if the user clicks outside of it
+    document.addEventListener('click', (event) => {
+        const isMenuOpen = appSidebar.classList.contains('sidebar-open');
+        const clickedInsideSidebar = appSidebar.contains(event.target);
+        const clickedOnMenuBtn = mobileMenuBtn.contains(event.target);
+
+        if (isMenuOpen && !clickedInsideSidebar && !clickedOnMenuBtn) {
+            appSidebar.classList.remove('sidebar-open');
+        }
+    });
+}
