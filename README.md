@@ -10,7 +10,7 @@ A sleek, modern web application designed to help developers easily discover "Goo
 * **Responsive Design:** Fully fluid layout that adapts seamlessly from desktop canvases to mobile screens.
 * **No Dependencies:** 100% Vanilla JavaScript, HTML5, and CSS3.
 
-![Dashboard UI Screenshot DevFlow](dashboard-screenshot.png)
+![Dashboard UI Screenshot DevFlow](./dashborad-screenshot.png)
 
 ## Tech Stack
 
