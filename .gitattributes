@@ -1,0 +1,9 @@
+# Set default behavior
+* text=auto
+
+# Force GitHub to ignore HTML and CSS in the language statistics
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+
+# Force GitHub to highlight JavaScript
+*.js linguist-detectable=true
