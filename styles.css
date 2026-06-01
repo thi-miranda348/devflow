@@ -74,8 +74,9 @@ body {
     font-family: var(--font-sans);
     font-size: 1.6rem;
     /* Default body text is 16px */
-    overflow: hidden;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    padding-top: 1.8rem;
 }
 
 a {
